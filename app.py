@@ -218,17 +218,19 @@ def fert_recommend():
     title = "Farmington - Fertilizer Suggestion"
 
     # requesting data from the form
-    crop_name = str(request.form['cropname'])
     N = int(request.form['nitrogen'])
     P = int(request.form['phosphorus'])
     K = int(request.form['potassium'])
+    crop_name = str(request.form['cropname'])
     # ph = float(request.form['ph'])
-    df = pd.read_csv('Data-processed\\fertilizer.csv')
+    df = pd.read_csv('Data\\fertilizer.csv')
     try:
         nr = df[df['Crop'] == crop_name]['N'].iloc[0]
+        # return render_template('fertilizer-result.html', title=title)
     except IndexError:
         title = "OOPS! An Error Occurred"
-        return render_template('try_again.html', title=title)
+        # return render_template('try_again.html', title=title)
+        return render_template('fertilizer-result.html', title=title)
     else:
         pr = df[df['Crop'] == crop_name]['P'].iloc[0]
         kr = df[df['Crop'] == crop_name]['K'].iloc[0]
