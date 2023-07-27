@@ -230,7 +230,7 @@ def fert_recommend():
     except IndexError:
         title = "OOPS! An Error Occurred"
         # return render_template('try_again.html', title=title)
-        return render_template('fertilizer-result.html', title=title)
+        return render_template('fertilizer-result.html',recommendation=response, title=title)
     else:
         pr = df[df['Crop'] == crop_name]['P'].iloc[0]
         kr = df[df['Crop'] == crop_name]['K'].iloc[0]
