@@ -29,10 +29,10 @@ disease_dic = {
     'Apple___Cedar_apple_rust': """ <b>Crop</b>: Apple <br/>Disease: Cedar Apple Rust<br/>
         <br/> Cause of disease:
 
-        <br/><br/>Cedar apple rust (Gymnosporangium juniperi-virginianae) is a fungal disease that depends on two species to spread and develop. It spends a portion of its two-year life cycle on Eastern red cedar (Juniperus virginiana). The pathogen’s spores develop in late fall on the juniper as a reddish brown gall on young branches of the trees.
+        <br/><br/>Cedar apple rust (Gymnosporangium juniperi-virginianae) is a fungal disease that depends on two species to spread and develop. It spends a portion of its two-year life cycle on Eastern red cedar (Juniperus virginiana). The pathogen's spores develop in late fall on the juniper as a reddish brown gall on young branches of the trees.
 
         <br/><br/> How to prevent/cure the disease <br/>
-        <br/>1. Since the juniper galls are the source of the spores that infect the apple trees, cutting them is a sound strategy if there aren’t too many of them.
+        <br/>1. Since the juniper galls are the source of the spores that infect the apple trees, cutting them is a sound strategy if there aren't too many of them.
 
         <br/>2. While the spores can travel for miles, most of the ones that could infect your tree are within a few hundred feet.
         
@@ -452,7 +452,7 @@ disease_dic = {
 
         <br/><br/> 1. TYLCV is transmitted by the insect vector Bemisia tabaci in a persistent-circulative nonpropagative manner. The virus can be efficiently transmitted during the adult stages.
 
-        <br/> 2. This virus transmission has a short acquisition access period of 15–20 minutes, and latent period of 8–24 hours.
+        <br/> 2. This virus transmission has a short acquisition access period of 15-20 minutes, and latent period of 8-24 hours.
         <br/><br/> How to prevent/cure the disease <br/>
         <br/>1. Currently, the most effective treatments used to control the spread of TYLCV are insecticides and resistant crop varieties.
 

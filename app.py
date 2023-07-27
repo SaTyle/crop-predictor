@@ -2,6 +2,8 @@ from flask import Flask, render_template, request, Markup, redirect
 import numpy as np
 import pandas as pd
 
+
+
 from utils.disease import disease_dic
 from utils.fertilizer import fertilizer_dic
 import requests
@@ -13,6 +15,8 @@ from torchvision import transforms
 from PIL import Image
 from utils.model import ResNet9
 import smtplib
+
+
 
 
 
@@ -267,7 +271,6 @@ def fert_recommend():
 
 
 
-
 @app.route('/disease-predict', methods=['GET', 'POST'])
 def disease_prediction():
     title = 'Farmington - Disease Detection'
@@ -278,17 +281,25 @@ def disease_prediction():
         file = request.files.get('file')
         if not file:
             return render_template('disease.html', title=title)
-        try:
-            img = file.read()
-
-            prediction = predict_image(img)
-
-            prediction = Markup(str(disease_dic[prediction]))
-            return render_template('disease-result.html', prediction=prediction, title=title)
-        except:
-            pass
-    return render_template('disease.html', title=title)
-
+    
+        # Read the image and convert it to RGB if it has 4 channels
+        img = Image.open(file)
+        img = img.convert('RGB')
+        
+        # Convert the image to bytes-like object
+        img_bytes = io.BytesIO()
+        img.save(img_bytes, format='JPEG')
+        
+        # Get the bytes data from the bytes-like object
+        img_bytes = img_bytes.getvalue()
+        
+        prediction = predict_image(img_bytes)
+    
+        prediction = Markup(str(disease_dic[prediction]))
+        return render_template('disease-result.html', prediction=prediction, title=title)
+        
+    # return render_template('disease.html', title=title)
+    return render_template('disease-result.html',prediction=prediction, title=title)
 
 # Navbar links
 
