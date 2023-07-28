@@ -227,7 +227,7 @@ def fert_recommend():
     K = int(request.form['potassium'])
     crop_name = str(request.form['cropname'])
     # ph = float(request.form['ph'])
-    df = pd.read_csv('Data\\fertilizer.xml')
+    df = pd.read_xml('Data\\fertilizer.xml')
     try:
         nr = df[df['Crop'] == crop_name]['N'].iloc[0]
         # return render_template('fertilizer-result.html', title=title)
