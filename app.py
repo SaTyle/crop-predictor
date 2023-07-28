@@ -221,13 +221,14 @@ def crop_prediction():
 def fert_recommend():
     title = "Farmington - Fertilizer Suggestion"
 
+
     # requesting data from the form
     N = int(request.form['nitrogen'])
     P = int(request.form['phosphorus'])
     K = int(request.form['potassium'])
     crop_name = str(request.form['cropname'])
     # ph = float(request.form['ph'])
-    df = pd.read_xml('Data\\fertilizer.xml')
+    df = pd.read_csv('Data\\fertilizer.xml')
     try:
         nr = df[df['Crop'] == crop_name]['N'].iloc[0]
         # return render_template('fertilizer-result.html', title=title)
