@@ -302,6 +302,9 @@ def disease_prediction():
     # return render_template('disease.html', title=title)
     return render_template('disease-result.html',prediction=prediction, title=title)
 
+
+
+
 # Navbar links
 
 @app.route('/aboutus')
