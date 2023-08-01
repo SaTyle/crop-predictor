@@ -1,11 +1,10 @@
 from flask import Flask, render_template, request, Markup, redirect
 import numpy as np
 import pandas as pd
-
-
-
 from utils.disease import disease_dic
 from utils.fertilizer import fertilizer_dic
+
+
 import requests
 import config
 import pickle
@@ -15,18 +14,27 @@ from torchvision import transforms
 from PIL import Image
 from utils.model import ResNet9
 import smtplib
-
-
-
-
-
 app = Flask(__name__)
 
-# Define your Flask routes and configurations here
 
 
 
-# email and password to send enquiries to the contact us page
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 OWN_EMAIL = 'knowndetails2003@gmail.com'
 OWN_PASSWORD = 'fsxaajscnzycrryz'
 
@@ -90,7 +98,7 @@ def subscribe(email, user_group_email, api_key):
 
 
 # loading the crop recommendation model
-crop_recommendation_model_path = 'models/RandomForest.pkl'
+crop_recommendation_model_path = 'models\RandomForest.pkl'
 crop_recommendation_model = pickle.load(
     open(crop_recommendation_model_path, 'rb'))
 
